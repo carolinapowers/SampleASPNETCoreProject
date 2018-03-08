@@ -4,13 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace SampleASPNetCoreProject.Controllers
 {
     public class SampleController : Controller
     {
-        // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
@@ -18,7 +15,7 @@ namespace SampleASPNetCoreProject.Controllers
 
         public IActionResult Details(int id)
         {
-            var model = "Test Model";
+            var model = 12345;
 
             return View(model);
         }
