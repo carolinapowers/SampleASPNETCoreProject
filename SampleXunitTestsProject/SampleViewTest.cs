@@ -42,8 +42,14 @@ namespace SampleXunitTestsProject
         [Fact(DisplayName = "Failing Test @failing-test")]
         public void FailingTest()
         {
-            // This task is designed to fail strictly to provide test failure output at the view level
-            Assert.True(false, "`Create.cshtml` does not exist. THIS TEST IS DESIGNED TO FAIL, Goto `SampleViewTest.cs` in the `SampleXunitTestsProject` and change the `Assert` in the `FailingTest` to use `true` instead of `false`.");
+            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "SampleASPNetCoreProject" + Path.DirectorySeparatorChar + "Views" + Path.DirectorySeparatorChar + "Sample" + Path.DirectorySeparatorChar + "BreakStuff.cshtml";
+            string file;
+            using (StreamReader streamReader = new StreamReader(filePath))
+            {
+                file = streamReader.ReadToEnd();
+            }
+
+            Assert.True(!file.Contains("BreakStuff"), @"`BreakStuff.cshtml` shouldn't say 'BreakStuff' in it, delete 'BreakStuff' from the `Views\Sample\BreakStuff.cshtml` file.");
         }
     }
 }

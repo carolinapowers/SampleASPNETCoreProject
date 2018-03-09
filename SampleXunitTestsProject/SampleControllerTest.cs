@@ -39,12 +39,12 @@ namespace SampleXunitTestsProject
             Assert.True(12345 == (int)result.Model, "`SampleController`'s `Details` action did not return the correct Model.");
         }
 
-        //THIS TEST IS TO TEST COMPILER ERROR OUTPUT, To cause a compiler error uncomment the commented out code
         [Fact(DisplayName = "Compiler Error Test @compiler-error-test")]
         public void CompilerErrorTest()
         {
-            //int number = "dog";
-            Assert.True(true, "if this failed something has gone very very wrong");
+            var controller = GetSampleController();
+            var result = controller.BreakStuff() as ViewResult;
+            Assert.True(result != null, "if this failed something has gone very very wrong");
         }
     }
 }

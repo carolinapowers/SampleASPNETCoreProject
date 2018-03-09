@@ -54,7 +54,9 @@ namespace SampleXunitTestsProject
         [Fact(DisplayName = "Exception Test @exception-test")]
         public void ExceptionTest()
         {
-            throw (new Exception("THIS EXCEPTION IS BEING THROWN ON PURPOSE! To fix this test goto the `SampleXUnitTestsProject`'s `SampleModelTest` class and comment out the `throw` in the `ExceptionTest` method."));
+            var sampleModel = new SampleModel();
+            sampleModel.BreakStuff();
+
             Assert.True(true, "if this fails you've done something very very wrong.");
         }
     }

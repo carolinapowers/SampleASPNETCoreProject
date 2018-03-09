@@ -19,5 +19,11 @@ namespace SampleASPNetCoreProject.Controllers
 
             return View(model);
         }
+
+        public IActionResult BreakStuff()
+        {
+            //int number = "dog";
+            return View();
+        }
     }
 }
