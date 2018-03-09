@@ -11,7 +11,7 @@ namespace SampleXunitTestsProject
         {
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "SampleASPNetCoreProject" + Path.DirectorySeparatorChar + "Views" + Path.DirectorySeparatorChar + "Sample" + Path.DirectorySeparatorChar + "Index.cshtml";
             string file;
-            using(StreamReader streamReader = new StreamReader(filePath))
+            using (StreamReader streamReader = new StreamReader(filePath))
             {
                 file = streamReader.ReadToEnd();
             }
@@ -36,6 +36,14 @@ namespace SampleXunitTestsProject
             var rgx = new Regex(pattern);
 
             Assert.True(rgx.IsMatch(file), "`Details.cshtml` did not contain the expected model declaration, `h1` tag containing the value 'Details', and `p` tag with a value of `@Model`.");
+        }
+
+        // THIS TEST IS DESIGNED TO FAIL ON PURPOSE FOR ERROR OUTPUT, To pass set pass true into the Assert!
+        [Fact(DisplayName = "Failing Test @failing-test")]
+        public void FailingTest()
+        {
+            // This task is designed to fail strictly to provide test failure output at the view level
+            Assert.True(false, "`Create.cshtml` does not exist. THIS TEST IS DESIGNED TO FAIL, Goto `SampleViewTest.cs` in the `SampleXunitTestsProject` and change the `Assert` in the `FailingTest` to use `true` instead of `false`.");
         }
     }
 }

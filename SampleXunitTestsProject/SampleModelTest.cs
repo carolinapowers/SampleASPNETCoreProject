@@ -49,5 +49,13 @@ namespace SampleXunitTestsProject
 
             Assert.True(expected == sampleModel.ReturnTotal(), "`Return Total` did not return the value of the Total property.");
         }
+
+        // THIS TEST IS DESIGNED TO FAIL BY THROWING AN UNHANDLED EXCEPTION.
+        [Fact(DisplayName = "Exception Test @exception-test")]
+        public void ExceptionTest()
+        {
+            throw (new Exception("THIS EXCEPTION IS BEING THROWN ON PURPOSE! To fix this test goto the `SampleXUnitTestsProject`'s `SampleModelTest` class and comment out the `throw` in the `ExceptionTest` method."));
+            Assert.True(true, "if this fails you've done something very very wrong.");
+        }
     }
 }
