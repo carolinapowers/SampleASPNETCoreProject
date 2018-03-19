@@ -22,7 +22,7 @@ namespace SampleASPNetCoreProject.Controllers
 
         public IActionResult BreakStuff()
         {
-            //int number = "dog";
+            int number = "dog";
             return View();
         }
     }
