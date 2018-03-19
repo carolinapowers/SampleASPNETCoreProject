@@ -30,7 +30,7 @@ namespace SampleASPNetCoreProject.Models
         public void BreakStuff()
         {
             //comment out this line of code to prevent the exception and cause the test to pass.
-            throw (new Exception("THIS EXCEPTION IS BEING THROWN ON PURPOSE! To fix this test goto the `SampleXUnitTestsProject`'s `SampleModelTest` class and comment out the `throw` in the `ExceptionTest` method."));
+            //throw (new Exception("THIS EXCEPTION IS BEING THROWN ON PURPOSE! To fix this test goto the `SampleXUnitTestsProject`'s `SampleModelTest` class and comment out the `throw` in the `ExceptionTest` method."));
 
             return;
         }
